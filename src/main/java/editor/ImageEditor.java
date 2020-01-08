@@ -1,7 +1,12 @@
+package editor;
+
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * ImageEditor is the main class of the package
+ */
 public class ImageEditor {
     //variable declaration
     private String header;
@@ -190,14 +195,14 @@ public class ImageEditor {
         }
         else if(args[2].equals("motionblur")){
             if(Integer.parseInt(args[3]) < 1){
-                System.out.println("USAGE: java ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
+                System.out.println("USAGE: java editor.ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
             }
             else{
                 motionBlur(args);
             }
         }
         else{
-            System.out.println("USAGE: java ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
+            System.out.println("USAGE: java editor.ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
         }
         //print out header to the ppm file.
         print(args);
@@ -207,7 +212,7 @@ public class ImageEditor {
     public static void main(String[] args){
 
         if(args.length < 3 || args.length > 4){
-            System.out.println("USAGE: java ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
+            System.out.println("USAGE: java editor.ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
         }
         else{
             File inFile = new File(args[0]);
@@ -215,7 +220,7 @@ public class ImageEditor {
                 Scanner myScanner = new Scanner(inFile).useDelimiter("((#[^\\n]*\\n)|(\\s+))+");
                 new ImageEditor().run(myScanner, args);
             } catch(Exception e){
-                System.out.println("USAGE: java ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
+                System.out.println("USAGE: java editor.ImageEditor in-file out-file (grayscale|invert|emboss|motionblur motion-blur-length)");
             }
         }
     }

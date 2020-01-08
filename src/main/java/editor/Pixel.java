@@ -1,3 +1,5 @@
+package editor;
+
 public class Pixel {
     private int red;
     private int green;
