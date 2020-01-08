@@ -4,4 +4,4 @@
 log/
 target/
 .DS_Store
-
+out_images/*
